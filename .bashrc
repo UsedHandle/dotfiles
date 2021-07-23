@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='\[\033[01;36m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\w\[\033[01;36m\]]\[\033[0m\]\$ '
+PS1='\[\033[01;36m\][ \[\033[01;32m\]\w \[\033[01;36m\]]\[\033[0m\]\$ '
 
 
 alias ls='ls --color=auto'
@@ -21,7 +21,15 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias whoami='echo $USER@$HOSTNAME'
+
 cdmk(){
 	mkdir -p -- "$1" && 
 	cd -P -- "$1"
 }
+
+bright(){
+	xrandr --output $1 --brightness $2
+
+}
+
